@@ -64,6 +64,12 @@ class Flight
 
 }
 //request
+if($_SERVER['REQUEST_METHOD'] !== 'POST')
+{
+   echo "Invalid request method";
+   exit;
+}
+
 $input = fopen('php://input', 'r');
 $handler = stream_get_contents($input);
 //decode
